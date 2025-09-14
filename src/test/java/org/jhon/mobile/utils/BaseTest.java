@@ -2,6 +2,7 @@ package org.jhon.mobile.utils;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
@@ -14,14 +15,23 @@ public class BaseTest {
         this.driver = createDriver();
     }
 
+    @AfterMethod
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+
     public AppiumDriver createDriver() {
         UiAutomator2Options options = new UiAutomator2Options()
                 .setApp("C:\\Users\\jhon.olivares\\Downloads\\android.wdio.native.app.v1.0.8.apk")
                 .setDeviceName("emulator-5554")
-                .setPlatformVersion("16.0");
+                .setPlatformVersion("16.0")
+                .setAppPackage("com.wdiodemoapp")
+                .setAppActivity("com.wdiodemoapp.MainActivity");
 
         try {
-            AppiumDriver driver1 = new AppiumDriver(new java.net.URL(" http://127.0.0.1:4723/"), options);
+            AppiumDriver driver1 = new AppiumDriver(new java.net.URL("http://127.0.0.1:4723/"), options);
             driver1.manage().timeouts().implicitlyWait(java.time.Duration.ofSeconds(5));
             return driver1;
         } catch (MalformedURLException e) {
