@@ -28,7 +28,7 @@ public class BaseScreen {
 
     public boolean isTheElementVisible(WebElement element, int seconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         try {
             WebElement element1 = wait.until(ExpectedConditions.visibilityOf(element));

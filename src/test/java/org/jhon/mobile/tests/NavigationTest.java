@@ -36,4 +36,4 @@ public class NavigationTest extends BaseTest {
         DragScreen dragScreen = new DragScreen(driver);
         Assert.assertTrue(dragScreen.isDragScreenVisible(), "Drag screen is not visible");
     }
-    }
+}
