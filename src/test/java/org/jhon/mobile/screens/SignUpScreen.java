@@ -22,6 +22,12 @@ public class SignUpScreen extends BaseScreen {
     @AndroidFindBy(id = "android:id/message")
     WebElement lblSuccessMessage;
 
+    @AndroidFindBy(id = "android:id/button1")
+    WebElement btnSuccessOk;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Login\").instance(0)")
+    WebElement btnLogin;
+
     public SignUpScreen(AppiumDriver driver) {
         super(driver);
     }
@@ -35,5 +41,13 @@ public class SignUpScreen extends BaseScreen {
 
     public boolean isSignupSuccessful() {
         return isTheElementVisible(lblSuccessMessage, 5);
+    }
+
+    public void confirmSuccess() {
+        click(btnSuccessOk);
+    }
+
+    public void goToLogin() {
+        click(btnLogin);
     }
 }
