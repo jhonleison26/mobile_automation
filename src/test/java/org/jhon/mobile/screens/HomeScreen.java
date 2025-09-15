@@ -23,6 +23,9 @@ public class HomeScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Drag\")")
     WebElement btnDrag;
 
+    @AndroidFindBy(uiAutomator = "text(\"WEBDRIVER\")")
+    WebElement lblTitle;
+
     public HomeScreen(AppiumDriver driver) {
         super(driver);
     }
@@ -45,5 +48,9 @@ public class HomeScreen extends BaseScreen {
 
     public void goToDrag() {
         click(btnDrag);
+    }
+
+    public boolean isScreenDisplayed() {
+        return lblTitle.isDisplayed();
     }
 }
