@@ -18,6 +18,6 @@ public class WebviewScreen extends BaseScreen {
     }
 
     public boolean isWebviewVisible() {
-        return isTheElementVisible(lblTextWebview, 5);
+        return isTheElementVisible(lblTextWebview, 20);
     }
 }

@@ -17,6 +17,9 @@ public class HomeScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Login\")")
     WebElement btnLogin;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Forms\")")
+    WebElement btnForms;
+
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Swipe\")")
     WebElement btnSwipe;
 
@@ -40,6 +43,10 @@ public class HomeScreen extends BaseScreen {
 
     public void goToLogin() {
         click(btnLogin);
+    }
+
+    public void goToForms() {
+        click(btnForms);
     }
 
     public void goToSwipe() {
