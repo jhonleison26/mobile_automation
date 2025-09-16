@@ -5,6 +5,10 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.jhon.mobile.utils.BaseScreen;
 import org.openqa.selenium.WebElement;
 
+/**
+ * Represents the Webview screen of the mobile application.
+ * Provides methods to interact with webview components.
+ */
 public class WebviewScreen extends BaseScreen {
 
     @AndroidFindBy(className = "android.widget.TextView")

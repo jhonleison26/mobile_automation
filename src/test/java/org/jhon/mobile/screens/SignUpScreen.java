@@ -5,6 +5,10 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.jhon.mobile.utils.BaseScreen;
 import org.openqa.selenium.WebElement;
 
+/**
+ * Represents the Sign-Up screen of the mobile application.
+ * Provides methods to interact with the sign-up form and verify successful registration.
+ */
 public class SignUpScreen extends BaseScreen {
 
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.ViewGroup\").instance(17)")

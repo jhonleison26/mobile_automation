@@ -7,6 +7,10 @@ import org.jhon.mobile.utils.BaseScreen;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+/**
+ * Represents the Home screen of the mobile application.
+ * Provides methods to navigate to different sections of the app.
+ */
 public class HomeScreen extends BaseScreen {
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Home\")")
     WebElement btnHome;
