@@ -13,16 +13,16 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testSuccessfulLogin() {
-        HomeScreen homeScreen = new HomeScreen(driver);
+        HomeScreen homeScreen = getHomeScreen();
 
         // Navigate to Login
         homeScreen.goToLogin();
-        LoginScreen loginScreen = new LoginScreen(driver);
+        LoginScreen loginScreen = getLoginScreen();
         Assert.assertTrue(loginScreen.isLoginScreenVisible(), "Login screen is not visible");
 
         // Go SignUp and create a new user
         loginScreen.goToSignUp();
-        SignUpScreen signUpScreen = new SignUpScreen(driver);
+        SignUpScreen signUpScreen = getSignUpScreen();
         String email = "user" + System.currentTimeMillis() + "@mail.com";
         String password = "Password123";
         signUpScreen.doSignup(email, password);
