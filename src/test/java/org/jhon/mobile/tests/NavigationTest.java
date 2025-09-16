@@ -5,6 +5,10 @@ import org.jhon.mobile.utils.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+/**
+ * Test class for validating navigation through the bottom menu of the mobile application.
+ * It includes tests for navigating to different screens and verifying their visibility.
+ */
 public class NavigationTest extends BaseTest {
 
     @Test

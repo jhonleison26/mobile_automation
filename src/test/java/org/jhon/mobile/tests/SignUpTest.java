@@ -9,6 +9,10 @@ import org.testng.annotations.Test;
 
 import java.util.UUID;
 
+/**
+ * Test class for validating the sign-up functionality of the mobile application.
+ * It includes tests for successful user registration.
+ */
 public class SignUpTest extends BaseTest {
 
     @Test

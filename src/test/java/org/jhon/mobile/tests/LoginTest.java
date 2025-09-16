@@ -5,6 +5,10 @@ import org.jhon.mobile.utils.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+/**
+ * Test class for validating the login functionality of the mobile application.
+ * It includes tests for successful login after user registration.
+ */
 public class LoginTest extends BaseTest {
 
     @Test

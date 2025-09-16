@@ -7,6 +7,9 @@ import org.testng.annotations.BeforeMethod;
 
 import java.net.MalformedURLException;
 
+/**
+ * BaseTest class to set up and tear down the Appium driver for mobile tests.
+ */
 public class BaseTest {
     protected AppiumDriver driver;
 

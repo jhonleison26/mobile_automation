@@ -10,6 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * BaseScreen serves as a foundational class for all screen objects in the mobile application.
+ * It provides common functionalities such as element interaction and visibility checks.
+ */
 public class BaseScreen {
     protected AppiumDriver driver;
 

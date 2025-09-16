@@ -5,6 +5,10 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.jhon.mobile.utils.BaseScreen;
 
+/**
+ * Represents the login screen of the mobile application.
+ * Provides methods to interact with the login screen elements.
+ */
 public class LoginScreen extends BaseScreen {
 
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Login / Sign up Form\")")
