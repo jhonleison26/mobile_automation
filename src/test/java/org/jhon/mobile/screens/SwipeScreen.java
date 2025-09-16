@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Represents the "Swipe" screen of the mobile app.
@@ -99,6 +100,12 @@ public class SwipeScreen extends BaseScreen {
 
     public boolean isLastCardVisible() {
         return isTheElementVisible(lastCard, 2);
+    }
+
+    // Returns true if only the last card is visible (i.e., only 1 card element is on screen)
+    public boolean isLastCardVisibleByCount() {
+        List<WebElement> cards = driver.findElements(AppiumBy.accessibilityId("card"));
+        return cards.size() == 1;
     }
 
     public boolean isYouFoundMeVisible() {
