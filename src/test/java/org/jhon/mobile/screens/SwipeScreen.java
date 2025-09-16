@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 import io.appium.java_client.AppiumBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Collections;
@@ -74,7 +76,6 @@ public class SwipeScreen extends BaseScreen {
 
     // Scroll down until the "You found me!!!" label is found or max attempts reached
     public boolean scrollUntilFoundMe() {
-        //
         By byYouFoundMe = AppiumBy.androidUIAutomator("new UiSelector().text(\"You found me!!!\")");
 
         for (int i = 0; i < 5; i++) {
@@ -83,14 +84,14 @@ public class SwipeScreen extends BaseScreen {
             }
             swipeUp();
             try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                new WebDriverWait(driver, Duration.ofMillis(500))
+                        .until(ExpectedConditions.presenceOfElementLocated(byYouFoundMe));
+            } catch (org.openqa.selenium.TimeoutException e) {
+                // Element not found within wait time, continue to next attempt
             }
         }
         return false;
     }
-
 
     public boolean isSwipeScreenVisible() {
         return isTheElementVisible(lblTitleSwipe, 5);
