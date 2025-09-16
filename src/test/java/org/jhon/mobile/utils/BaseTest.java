@@ -2,6 +2,7 @@ package org.jhon.mobile.utils;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import org.jhon.mobile.screens.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -24,6 +25,36 @@ public class BaseTest {
             driver.quit();
         }
     }
+
+    public HomeScreen getHomeScreen() {
+        return new HomeScreen(driver);
+    }
+
+    public WebviewScreen getWebviewScreen() {
+        return new WebviewScreen(driver);
+    }
+
+    public LoginScreen getLoginScreen() {
+        return new LoginScreen(driver);
+    }
+
+    public FormsScreen getFormsScreen() {
+        return new FormsScreen(driver);
+    }
+
+    public SwipeScreen getSwipeScreen() {
+        return new SwipeScreen(driver);
+    }
+
+    public DragScreen getDragScreen() {
+        return new DragScreen(driver);
+    }
+
+    public SignUpScreen getSignUpScreen() {
+        return new SignUpScreen(driver);
+    }
+
+
 
     public AppiumDriver createDriver() {
         UiAutomator2Options options = new UiAutomator2Options()

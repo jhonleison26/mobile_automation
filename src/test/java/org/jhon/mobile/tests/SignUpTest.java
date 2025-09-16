@@ -18,16 +18,16 @@ public class SignUpTest extends BaseTest {
     @Test
     public void testSuccessfulSignUp() {
         // Go Home
-        HomeScreen homeScreen = new HomeScreen(driver);
+        HomeScreen homeScreen = getHomeScreen();
 
         // Navigate to Login
         homeScreen.goToLogin();
-        LoginScreen loginScreen = new LoginScreen(driver);
+        LoginScreen loginScreen = getLoginScreen();
         Assert.assertTrue(loginScreen.isLoginScreenVisible(), "Login screen is not visible");
 
         // Go SignUp
         loginScreen.goToSignUp();
-        SignUpScreen signUpScreen = new SignUpScreen(driver);
+        SignUpScreen signUpScreen = getSignUpScreen();
 
         // Generate random email and password
         String randomEmail = "test_" + UUID.randomUUID().toString().substring(0, 5) + "@mail.com";

@@ -15,11 +15,11 @@ public class SwipeTest extends BaseTest {
     @Test
     public void testSwipeCards() {
         // Go Home
-        HomeScreen homeScreen = new HomeScreen(driver);
+        HomeScreen homeScreen = getHomeScreen();
 
         // Navigate to Swipe
         homeScreen.goToSwipe();
-        SwipeScreen swipeScreen = new SwipeScreen(driver);
+        SwipeScreen swipeScreen = getSwipeScreen();
         Assert.assertTrue(swipeScreen.isSwipeScreenVisible(), "Swipe screen is not visible");
 
         // Keep swiping until the last card is visible (only one card on screen) or max attempts reached
